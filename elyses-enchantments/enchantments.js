@@ -9,7 +9,7 @@
  * @returns {number} the card
  */
 export function getItem(cards, position) {
-  // Creamos una variable que se refiera a la posición de la carta que escogemos de la lista
+  // Creamos una variable que haga referencia a la posición de la carta que escogemos de la lista
   let pickCard = cards[position]
   return pickCard
 }
