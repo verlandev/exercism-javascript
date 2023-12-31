@@ -34,14 +34,19 @@ export function birdsInWeek(birdsPerDay, week) {
   let birdsCount = 0
   // Creamos una constante con los días que tiene una semana
   const DAYS_PER_WEEK = 7
+  // Calculamos el índice final para la semana dada o el primer día de la siguiente
   let totalDays = DAYS_PER_WEEK * week
-  let indexArray = (week - 1) * DAYS_PER_WEEK
+  // Calculamos el índice de inicio en el array para la semana dada
+    // Para la semana 1 (week = 1) --> pero restamos 1 porque en un array la primera posición es 0
+    // Así para la semana 2 (week = 2) --> empieza a partir del índice 7
+  let indexStart = (week - 1) * DAYS_PER_WEEK
 
-  for(let i = indexArray; i < totalDays; i++){
+  // Recorremos el array desde el índice de inicio hasta el índice justo antes de totalDays
+  for(let i = indexStart; i < totalDays; i++){
+    // Sumamos al contador el valor de cada uno de los índices a medida que va avanzando
     birdsCount += birdsPerDay[i]
-    console.log(birdsCount)
   }
-  
+
   return birdsCount
 }
 
