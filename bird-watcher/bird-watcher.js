@@ -57,15 +57,20 @@ export function birdsInWeek(birdsPerDay, week) {
  *
  * @param {number[]} birdsPerDay
  * @returns {number[]} corrected bird count data
+ * 
+ * COMENTARIO: resulta confuso que el enunciado diga "cada segundo día".
+ * Hace entender que hay que modificar las posiciones impares (a partir de let = 1), pero
+ * la solución solo es correcta cuando se empieza por let = 0
  */
 
 
+
 export function fixBirdCountLog(birdsPerDay) {
-  // Tenemos que modificar las posiciones IMPARES del array
-    // Initialization: en la posición 1
+  // Tenemos que modificar las posiciones PARES del array
+    // Initialization: en la posición 0
     // Condition: recorremos todo el array
     // Step: vamos de 2 en 2
-  for (let i = 1; i < birdsPerDay.length; i = i + 2 ){
+  for (let i = 0; i < birdsPerDay.length; i += 2 ){
     // Para comprobar que a medida que recorremos el array el valor de i es igual a las posiciones impares del array
     console.log ('Esto es lo que valen las posiciones impares '+ i + ':' + birdsPerDay[i])
     // A cada una de estas posiciones le sumamos 1
