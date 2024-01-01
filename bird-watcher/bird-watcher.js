@@ -10,6 +10,7 @@
  * @param {number[]} birdsPerDay
  * @returns {number} total bird count
  */
+
 export function totalBirdCount(birdsPerDay) {
   // Establecemos una variable local que establece el conteo a 0 y que debe ir variando a medida que avanza el bucle
   let birdsCount = 0
@@ -57,6 +58,19 @@ export function birdsInWeek(birdsPerDay, week) {
  * @param {number[]} birdsPerDay
  * @returns {number[]} corrected bird count data
  */
+
+
 export function fixBirdCountLog(birdsPerDay) {
-  
+  // Tenemos que modificar las posiciones IMPARES del array
+    // Initialization: en la posición 1
+    // Condition: recorremos todo el array
+    // Step: vamos de 2 en 2
+  for (let i = 1; i < birdsPerDay.length; i = i + 2 ){
+    // Para comprobar que a medida que recorremos el array el valor de i es igual a las posiciones impares del array
+    console.log ('Esto es lo que valen las posiciones impares '+ i + ':' + birdsPerDay[i])
+    // A cada una de estas posiciones le sumamos 1
+    birdsPerDay[i] += 1
+    console.log ('Esto es lo que vale la posición impar '+ i + ' después de sumar 1 más: ' + birdsPerDay[i])
+  }
+  return birdsPerDay
 }
